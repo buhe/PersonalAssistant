@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 import LangChain
+import OpenAIKit
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -20,6 +21,20 @@ struct ContentView: View {
         Task {
             let l = NotionLoader()
             let docs = await l.load()
+            let llm = OpenAI(model: Model.GPT4.gpt4_1106_preview)
+            let store = LocalFileStore()
+            let r = await ParentDocumentRetriever(child_splitter: RecursiveCharacterTextSplitter(chunk_size: 400, chunk_overlap: 200), parent_splitter: RecursiveCharacterTextSplitter(chunk_size: 2000, chunk_overlap: 200), vectorstore: SimilaritySearchKit(embeddings: OpenAIEmbeddings()), docstore: store)
+
+            await r.add_documents(documents: docs)
+            
+            let qa = ConversationalRetrievalChain(retriver: r, llm: llm)
+            var chat_history:[(String, String)] = []
+            let question = "最后和谁结婚了？"
+            let result = await qa.predict(args: ["question": question, "chat_history": ConversationalRetrievalChain.get_chat_history(chat_history: chat_history)])
+            chat_history.append((question, result!.0))
+            
+            print("⚠️**Question**: \(question)")
+            print("✅**Answer**: \(result!)")
         }
     }
     var body: some View {
