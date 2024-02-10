@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,8 @@
 		3F7EB3C62B771CFB007969C2 /* PersonalAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7EB3C52B771CFB007969C2 /* PersonalAssistantTests.swift */; };
 		3F7EB3D02B771CFB007969C2 /* PersonalAssistantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7EB3CF2B771CFB007969C2 /* PersonalAssistantUITests.swift */; };
 		3F7EB3D22B771CFB007969C2 /* PersonalAssistantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7EB3D12B771CFB007969C2 /* PersonalAssistantUITestsLaunchTests.swift */; };
-		3F7EB3DF2B771D16007969C2 /* env.txt in Sources */ = {isa = PBXBuildFile; fileRef = 3F7EB3DE2B771D16007969C2 /* env.txt */; };
+		3F7EB3E22B772608007969C2 /* LangChain in Frameworks */ = {isa = PBXBuildFile; productRef = 3F7EB3E12B772608007969C2 /* LangChain */; };
+		3FA6DD0D2B772816008F3043 /* env.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3F7EB3DE2B771D16007969C2 /* env.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7EB3E22B772608007969C2 /* LangChain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +156,9 @@
 			dependencies = (
 			);
 			name = PersonalAssistant;
+			packageProductDependencies = (
+				3F7EB3E12B772608007969C2 /* LangChain */,
+			);
 			productName = PersonalAssistant;
 			productReference = 3F7EB3AB2B771CF9007969C2 /* PersonalAssistant.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +231,9 @@
 				Base,
 			);
 			mainGroup = 3F7EB3A22B771CF9007969C2;
+			packageReferences = (
+				3F7EB3E02B772608007969C2 /* XCLocalSwiftPackageReference "../langchain-swift" */,
+			);
 			productRefGroup = 3F7EB3AC2B771CF9007969C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA6DD0D2B772816008F3043 /* env.txt in Resources */,
 				3F7EB3BC2B771CFB007969C2 /* Preview Assets.xcassets in Resources */,
 				3F7EB3B82B771CFB007969C2 /* Assets.xcassets in Resources */,
 			);
@@ -271,7 +280,6 @@
 				3F7EB3AF2B771CF9007969C2 /* PersonalAssistantApp.swift in Sources */,
 				3F7EB3B42B771CF9007969C2 /* PersonalAssistant.xcdatamodeld in Sources */,
 				3F7EB3B62B771CF9007969C2 /* ContentView.swift in Sources */,
-				3F7EB3DF2B771D16007969C2 /* env.txt in Sources */,
 				3F7EB3B12B771CF9007969C2 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +637,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		3F7EB3E02B772608007969C2 /* XCLocalSwiftPackageReference "../langchain-swift" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../langchain-swift";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F7EB3E12B772608007969C2 /* LangChain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LangChain;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3F7EB3B22B771CF9007969C2 /* PersonalAssistant.xcdatamodeld */ = {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import LangChain
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,7 +16,12 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    init() {
+        Task {
+            let l = NotionLoader()
+            let docs = await l.load()
+        }
+    }
     var body: some View {
         NavigationView {
             List {
