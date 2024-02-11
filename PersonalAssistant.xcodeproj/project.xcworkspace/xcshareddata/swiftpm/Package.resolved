@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/buhe/openai-kit",
       "state" : {
-        "revision" : "ead156fa2e25e4e469cd837fda08836fb880a834",
-        "version" : "1.8.3"
+        "revision" : "f0c785d22dd14f71a42ad83cedbbddc02591aadb",
+        "version" : "1.8.5"
       }
     },
     {

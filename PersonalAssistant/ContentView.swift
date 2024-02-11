@@ -29,7 +29,7 @@ struct ContentView: View {
             
             let l = NotionLoader()
             let docs = await l.load()
-            let llm = OpenAI(model: Model.GPT4.gpt4_1106_preview)
+            let llm = OpenAI(model: Model.GPT3.gpt3_5Turbo_0125)
             let store = LocalFileStore()
             let r = await ParentDocumentRetriever(child_splitter: RecursiveCharacterTextSplitter(chunk_size: 400, chunk_overlap: 200), parent_splitter: RecursiveCharacterTextSplitter(chunk_size: 2000, chunk_overlap: 200), vectorstore: SimilaritySearchKit(embeddings: OpenAIEmbeddings(session: urlSession)), docstore: store)
 
