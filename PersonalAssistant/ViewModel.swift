@@ -29,14 +29,15 @@ class ViewModel: ObservableObject {
         sessionConfig.waitsForConnectivity = true
         let urlSession = URLSession(configuration: sessionConfig)
         
-        let l = NotionLoader()
-        let docs = await l.load()
+//        let l = NotionLoader()
+//        let docs = await l.load()
         let llm = OpenAI(model: Model.GPT4.gpt4_1106_preview)
         let store = LocalFileStore()
-        let r = await ParentDocumentRetriever(child_splitter: RecursiveCharacterTextSplitter(chunk_size: 400, chunk_overlap: 200), parent_splitter: RecursiveCharacterTextSplitter(chunk_size: 2000, chunk_overlap: 200), vectorstore: SimilaritySearchKit(embeddings: OpenAIEmbeddings(session: urlSession)), docstore: store)
+        let vc = await SimilaritySearchKit(embeddings: OpenAIEmbeddings(session: urlSession), autoLoad: true)
+        let r = ParentDocumentRetriever(child_splitter: RecursiveCharacterTextSplitter(chunk_size: 400, chunk_overlap: 200), parent_splitter: RecursiveCharacterTextSplitter(chunk_size: 2000, chunk_overlap: 200), vectorstore: vc, docstore: store)
 
-        await r.add_documents(documents: docs)
-        
+//        await r.add_documents(documents: docs)
+//        vc.writeToFile()
         let qa = ConversationalRetrievalChain(retriver: r, llm: llm)
         var chat_history:[(String, String)] = []
         let result = await qa.predict(args: ["question": question, "chat_history": ConversationalRetrievalChain.get_chat_history(chat_history: chat_history)])
