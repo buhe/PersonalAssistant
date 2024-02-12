@@ -116,69 +116,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "082B3DDA-6AFD-41E3-AFF1-13D7BCC6AA6A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PersonalAssistant/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "init()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "082B3DDA-6AFD-41E3-AFF1-13D7BCC6AA6A - 39452ad471ce5111"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(7) suspend resume partial function for closure #1 @Sendable () async -&gt; () in PersonalAssistant.ContentView.init() -&gt; PersonalAssistant.ContentView"
-                  moduleName = "PersonalAssistant"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guyanhua/code/github/PersonalAssistant/PersonalAssistant/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "268">
-               </Location>
-               <Location
-                  uuid = "082B3DDA-6AFD-41E3-AFF1-13D7BCC6AA6A - 755c1e7a6a29a739"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(8) await resume partial function for closure #1 @Sendable () async -&gt; () in PersonalAssistant.ContentView.init() -&gt; PersonalAssistant.ContentView"
-                  moduleName = "PersonalAssistant"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guyanhua/code/github/PersonalAssistant/PersonalAssistant/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "082B3DDA-6AFD-41E3-AFF1-13D7BCC6AA6A - c4c7cb239f119d1f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(9) suspend resume partial function for closure #1 @Sendable () async -&gt; () in PersonalAssistant.ContentView.init() -&gt; PersonalAssistant.ContentView"
-                  moduleName = "PersonalAssistant"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guyanhua/code/github/PersonalAssistant/PersonalAssistant/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "188">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "26E51301-044B-4442-B238-3173473D657D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -248,9 +185,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            endingLineNumber = "62">
             <Locations>
                <Location
                   uuid = "C2147605-2792-4876-8A61-8E5AA846B310 - b7317b851e324298"
@@ -934,8 +869,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "encode(sentence:)"
-            landmarkType = "7">
+            landmarkName = "LangChainEmbeddingBridge"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1029,8 +964,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "encode(sentence:)"
-            landmarkType = "7">
+            landmarkName = "LangChainEmbeddingBridge"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

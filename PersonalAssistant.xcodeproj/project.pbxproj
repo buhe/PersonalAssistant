@@ -18,6 +18,11 @@
 		3F7EB3D22B771CFB007969C2 /* PersonalAssistantUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7EB3D12B771CFB007969C2 /* PersonalAssistantUITestsLaunchTests.swift */; };
 		3F7EB3E22B772608007969C2 /* LangChain in Frameworks */ = {isa = PBXBuildFile; productRef = 3F7EB3E12B772608007969C2 /* LangChain */; };
 		3FA6DD0D2B772816008F3043 /* env.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3F7EB3DE2B771D16007969C2 /* env.txt */; };
+		3FC764332B79C19300FDE5B9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC764322B79C19300FDE5B9 /* ViewModel.swift */; };
+		3FC764352B79C1A700FDE5B9 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC764342B79C1A700FDE5B9 /* ChatModel.swift */; };
+		3FC764382B79C5F600FDE5B9 /* MarkdownText in Frameworks */ = {isa = PBXBuildFile; productRef = 3FC764372B79C5F600FDE5B9 /* MarkdownText */; };
+		3FC7643A2B79C71700FDE5B9 /* MarkdownStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC764392B79C71700FDE5B9 /* MarkdownStyles.swift */; };
+		3FC7643C2B79C7C800FDE5B9 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7643B2B79C7C800FDE5B9 /* InputFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +57,10 @@
 		3F7EB3CF2B771CFB007969C2 /* PersonalAssistantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAssistantUITests.swift; sourceTree = "<group>"; };
 		3F7EB3D12B771CFB007969C2 /* PersonalAssistantUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAssistantUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3F7EB3DE2B771D16007969C2 /* env.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = env.txt; sourceTree = "<group>"; };
+		3FC764322B79C19300FDE5B9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3FC764342B79C1A700FDE5B9 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		3FC764392B79C71700FDE5B9 /* MarkdownStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownStyles.swift; sourceTree = "<group>"; };
+		3FC7643B2B79C7C800FDE5B9 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC764382B79C5F600FDE5B9 /* MarkdownText in Frameworks */,
 				3F7EB3E22B772608007969C2 /* LangChain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +113,8 @@
 		3F7EB3AD2B771CF9007969C2 /* PersonalAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				3FC764342B79C1A700FDE5B9 /* ChatModel.swift */,
+				3FC764322B79C19300FDE5B9 /* ViewModel.swift */,
 				3F7EB3AE2B771CF9007969C2 /* PersonalAssistantApp.swift */,
 				3F7EB3B02B771CF9007969C2 /* Persistence.swift */,
 				3F7EB3B52B771CF9007969C2 /* ContentView.swift */,
@@ -111,6 +123,8 @@
 				3F7EB3B22B771CF9007969C2 /* PersonalAssistant.xcdatamodeld */,
 				3F7EB3BA2B771CFB007969C2 /* Preview Content */,
 				3F7EB3DE2B771D16007969C2 /* env.txt */,
+				3FC764392B79C71700FDE5B9 /* MarkdownStyles.swift */,
+				3FC7643B2B79C7C800FDE5B9 /* InputFieldView.swift */,
 			);
 			path = PersonalAssistant;
 			sourceTree = "<group>";
@@ -158,6 +172,7 @@
 			name = PersonalAssistant;
 			packageProductDependencies = (
 				3F7EB3E12B772608007969C2 /* LangChain */,
+				3FC764372B79C5F600FDE5B9 /* MarkdownText */,
 			);
 			productName = PersonalAssistant;
 			productReference = 3F7EB3AB2B771CF9007969C2 /* PersonalAssistant.app */;
@@ -233,6 +248,7 @@
 			mainGroup = 3F7EB3A22B771CF9007969C2;
 			packageReferences = (
 				3F7EB3E02B772608007969C2 /* XCLocalSwiftPackageReference "../langchain-swift" */,
+				3FC764362B79C5F600FDE5B9 /* XCRemoteSwiftPackageReference "MarkdownText" */,
 			);
 			productRefGroup = 3F7EB3AC2B771CF9007969C2 /* Products */;
 			projectDirPath = "";
@@ -277,9 +293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FC7643A2B79C71700FDE5B9 /* MarkdownStyles.swift in Sources */,
+				3FC764332B79C19300FDE5B9 /* ViewModel.swift in Sources */,
 				3F7EB3AF2B771CF9007969C2 /* PersonalAssistantApp.swift in Sources */,
 				3F7EB3B42B771CF9007969C2 /* PersonalAssistant.xcdatamodeld in Sources */,
+				3FC764352B79C1A700FDE5B9 /* ChatModel.swift in Sources */,
 				3F7EB3B62B771CF9007969C2 /* ContentView.swift in Sources */,
+				3FC7643C2B79C7C800FDE5B9 /* InputFieldView.swift in Sources */,
 				3F7EB3B12B771CF9007969C2 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,10 +665,26 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		3FC764362B79C5F600FDE5B9 /* XCRemoteSwiftPackageReference "MarkdownText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shaps80/MarkdownText.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		3F7EB3E12B772608007969C2 /* LangChain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LangChain;
+		};
+		3FC764372B79C5F600FDE5B9 /* MarkdownText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FC764362B79C5F600FDE5B9 /* XCRemoteSwiftPackageReference "MarkdownText" */;
+			productName = MarkdownText;
 		};
 /* End XCSwiftPackageProductDependency section */
 
