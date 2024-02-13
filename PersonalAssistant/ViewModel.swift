@@ -33,7 +33,7 @@ class ViewModel: ObservableObject {
         let llm = OpenAI(model: Model.GPT4.gpt4_1106_preview)
         
         let qa = ConversationalRetrievalChain(retriver: model.r, llm: llm)
-        
+        await syncData()
         let result = await qa.predict(args: ["question": question, "chat_history": ConversationalRetrievalChain.get_chat_history(chat_history: chat_history)])
         chat_history.append((question, result!.0))
         
