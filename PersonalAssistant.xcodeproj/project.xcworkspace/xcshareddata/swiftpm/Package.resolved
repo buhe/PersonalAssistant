@@ -325,6 +325,15 @@
       }
     },
     {
+      "identity" : "uix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/buhe/UIx",
+      "state" : {
+        "revision" : "2c3db33ef36f74ab4d8419628b91c459eac4c1ad",
+        "version" : "0.7.0"
+      }
+    },
+    {
       "identity" : "urlqueryencoder",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kean/URLQueryEncoder",

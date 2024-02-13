@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F3D7AA72B7B85E3005FAF7E /* UIx in Frameworks */ = {isa = PBXBuildFile; productRef = 3F3D7AA62B7B85E3005FAF7E /* UIx */; };
 		3F7EB3AF2B771CF9007969C2 /* PersonalAssistantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7EB3AE2B771CF9007969C2 /* PersonalAssistantApp.swift */; };
 		3F7EB3B12B771CF9007969C2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7EB3B02B771CF9007969C2 /* Persistence.swift */; };
 		3F7EB3B42B771CF9007969C2 /* PersonalAssistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F7EB3B22B771CF9007969C2 /* PersonalAssistant.xcdatamodeld */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3D7AA72B7B85E3005FAF7E /* UIx in Frameworks */,
 				3FC764382B79C5F600FDE5B9 /* MarkdownText in Frameworks */,
 				3F7EB3E22B772608007969C2 /* LangChain in Frameworks */,
 			);
@@ -173,6 +175,7 @@
 			packageProductDependencies = (
 				3F7EB3E12B772608007969C2 /* LangChain */,
 				3FC764372B79C5F600FDE5B9 /* MarkdownText */,
+				3F3D7AA62B7B85E3005FAF7E /* UIx */,
 			);
 			productName = PersonalAssistant;
 			productReference = 3F7EB3AB2B771CF9007969C2 /* PersonalAssistant.app */;
@@ -249,6 +252,7 @@
 			packageReferences = (
 				3F7EB3E02B772608007969C2 /* XCLocalSwiftPackageReference "../langchain-swift" */,
 				3FC764362B79C5F600FDE5B9 /* XCRemoteSwiftPackageReference "MarkdownText" */,
+				3F3D7AA52B7B85E3005FAF7E /* XCRemoteSwiftPackageReference "UIx" */,
 			);
 			productRefGroup = 3F7EB3AC2B771CF9007969C2 /* Products */;
 			projectDirPath = "";
@@ -666,6 +670,14 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3F3D7AA52B7B85E3005FAF7E /* XCRemoteSwiftPackageReference "UIx" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/buhe/UIx";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
 		3FC764362B79C5F600FDE5B9 /* XCRemoteSwiftPackageReference "MarkdownText" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/shaps80/MarkdownText.git";
@@ -677,6 +689,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3F3D7AA62B7B85E3005FAF7E /* UIx */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F3D7AA52B7B85E3005FAF7E /* XCRemoteSwiftPackageReference "UIx" */;
+			productName = UIx;
+		};
 		3F7EB3E12B772608007969C2 /* LangChain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LangChain;

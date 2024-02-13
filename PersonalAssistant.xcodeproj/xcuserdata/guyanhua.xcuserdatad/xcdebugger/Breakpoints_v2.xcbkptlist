@@ -123,8 +123,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "writeToFile()"
             landmarkType = "7">
             <Locations>
@@ -186,8 +186,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "SimilaritySearchKit"
             landmarkType = "3">
             <Locations>
@@ -485,8 +485,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "SimilaritySearchKit"
             landmarkType = "3">
             <Locations>
@@ -611,8 +611,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "writeToFile()"
             landmarkType = "7">
             <Locations>
@@ -689,8 +689,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "writeToFile()"
             landmarkType = "7">
             <Locations>
@@ -877,8 +877,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "LangChainEmbeddingBridge"
             landmarkType = "14">
          </BreakpointContent>
@@ -893,8 +893,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "encode(sentence:)"
             landmarkType = "7">
             <Locations>
@@ -972,88 +972,10 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "LangChainEmbeddingBridge"
             landmarkType = "14">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "26EDF5C1-B7D5-42F0-A8D1-9DA72E591E61"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "encode(sentence:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "26EDF5C1-B7D5-42F0-A8D1-9DA72E591E61 - 90e5d28d821815b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for LangChain.LangChainEmbeddingBridge.encode(sentence: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;Swift.Float&gt;&gt;"
-                  moduleName = "PersonalAssistant"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guyanhua/code/github/langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "26EDF5C1-B7D5-42F0-A8D1-9DA72E591E61 - 90e5d28d821815d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for LangChain.LangChainEmbeddingBridge.encode(sentence: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;Swift.Float&gt;&gt;"
-                  moduleName = "PersonalAssistant"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guyanhua/code/github/langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "76">
-               </Location>
-               <Location
-                  uuid = "26EDF5C1-B7D5-42F0-A8D1-9DA72E591E61 - cf75b71615da3dd9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for LangChain.LangChainEmbeddingBridge.encode(sentence: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;Swift.Float&gt;&gt;"
-                  moduleName = "PersonalAssistant"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guyanhua/code/github/langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "26EDF5C1-B7D5-42F0-A8D1-9DA72E591E61 - 4dd80488f862d1df"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for LangChain.LangChainEmbeddingBridge.encode(sentence: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;Swift.Float&gt;&gt;"
-                  moduleName = "PersonalAssistant"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/guyanhua/code/github/langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "68">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
