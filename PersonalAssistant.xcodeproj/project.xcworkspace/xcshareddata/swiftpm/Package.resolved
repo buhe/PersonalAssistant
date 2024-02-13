@@ -111,10 +111,10 @@
     {
       "identity" : "similarity-search-kit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ZachNagengast/similarity-search-kit.git",
+      "location" : "https://github.com/buhe/similarity-search-kit",
       "state" : {
-        "revision" : "ddc8e458d0e826b2fe5dbce6f6eac96a8935e8eb",
-        "version" : "0.0.13"
+        "revision" : "7bf84238c1d98d159063385a7be34620b8c640d2",
+        "version" : "0.0.14"
       }
     },
     {

@@ -15,31 +15,25 @@ class ViewModel: ObservableObject {
     @Published var model: ChatModel
     @Published var searchText = ""
     
+    var chat_history:[(String, String)] = []
     init() {
         model = ChatModel()
     }
-    
+    func syncData() async {
+        let docs = await model.syncNotion()
+        if !docs.isEmpty {
+            await model.AddDocument(docs: docs)
+        }
+    }
     func invokeByQuestion(question: String) async {
         DispatchQueue.main.async {
             self.model.messages.append((question,nil))
         }
-        
-        let sessionConfig = URLSessionConfiguration.default
-        sessionConfig.timeoutIntervalForRequest = 1000.0
-        sessionConfig.waitsForConnectivity = true
-        let urlSession = URLSession(configuration: sessionConfig)
-        
-//        let l = NotionLoader()
-//        let docs = await l.load()
-        let llm = OpenAI(model: Model.GPT4.gpt4_1106_preview)
-        let store = LocalFileStore()
-        let vc = await SimilaritySearchKit(embeddings: OpenAIEmbeddings(session: urlSession), autoLoad: true)
-        let r = ParentDocumentRetriever(child_splitter: RecursiveCharacterTextSplitter(chunk_size: 400, chunk_overlap: 200), parent_splitter: RecursiveCharacterTextSplitter(chunk_size: 2000, chunk_overlap: 200), vectorstore: vc, docstore: store)
 
-//        await r.add_documents(documents: docs)
-//        vc.writeToFile()
-        let qa = ConversationalRetrievalChain(retriver: r, llm: llm)
-        var chat_history:[(String, String)] = []
+        let llm = OpenAI(model: Model.GPT4.gpt4_1106_preview)
+        
+        let qa = ConversationalRetrievalChain(retriver: model.r, llm: llm)
+        
         let result = await qa.predict(args: ["question": question, "chat_history": ConversationalRetrievalChain.get_chat_history(chat_history: chat_history)])
         chat_history.append((question, result!.0))
         

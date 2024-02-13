@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 import MarkdownText
+import LangChain
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -20,6 +21,11 @@ struct ContentView: View {
     @ObservedObject var viewModel: ViewModel
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
+        Task {
+            let rss = RSSLoader(url: "https://www.douban.com/feed/people/130141537/interests")
+            let r = await rss.load()
+            print("🌈rss:\(r)")
+        }
     }
     var body: some View {
         VStack {
