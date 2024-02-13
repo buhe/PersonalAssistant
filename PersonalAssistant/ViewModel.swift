@@ -15,16 +15,26 @@ class ViewModel: ObservableObject {
     @Published var model: ChatModel
     @Published var searchText = ""
     
+    @Published var isLoading = false
+    @Published var loadingText = ""
+    
     var chat_history:[(String, String)] = []
     init() {
         model = ChatModel()
     }
     func syncData() async {
+        DispatchQueue.main.async {
+             self.isLoading = true
+             self.loadingText = "Loadding Notion..."
+        }
         let docs = await model.syncNotion()
         if !docs.isEmpty {
             await model.AddDocument(docs: docs)
         }
         print("🚗 Loaded")
+        DispatchQueue.main.async {
+            self.isLoading = false
+        }
     }
     func invokeByQuestion(question: String) async {
         DispatchQueue.main.async {
