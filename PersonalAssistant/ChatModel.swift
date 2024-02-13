@@ -18,15 +18,24 @@ struct ChatModel {
         let urlSession = URLSession(configuration: sessionConfig)
         
         let store = LocalFileStore()
-        vc = SimilaritySearchKit(embeddings: OpenAIEmbeddings(session: urlSession), autoLoad: true)
+        vc = SimilaritySearchKit(embeddings: OpenAIEmbeddings(session: urlSession))
         r = ParentDocumentRetriever(child_splitter: RecursiveCharacterTextSplitter(chunk_size: 400, chunk_overlap: 200), parent_splitter: RecursiveCharacterTextSplitter(chunk_size: 2000, chunk_overlap: 200), vectorstore: vc, docstore: store)
     }
-    func syncNotion() async -> [Document] {
+    func syncAllNotion() async -> [Document] {
         let l = NotionLoader()
         let docs = await l.load()
-        // write notion to file
+        print("🦙 Sync \(docs.count) Notion docs.")
+        // write diff notion to file
+        
+        return docs
+    }
+    func syncDiffNotion() async -> [Document] {
+        let l = NotionLoader()
+        let docs = await l.load()
         
         // compare now and file
+        
+        // write diff notion to file
         
         return docs
     }

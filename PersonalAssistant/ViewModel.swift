@@ -15,14 +15,36 @@ class ViewModel: ObservableObject {
     @Published var model: ChatModel
     @Published var searchText = ""
     
+    @Published var isLoading = false
+    @Published var loadingText = ""
     var chat_history:[(String, String)] = []
     init() {
         model = ChatModel()
     }
-    func syncData() async {
-        let docs = await model.syncNotion()
+    func setup() async {
+        DispatchQueue.main.async {
+            self.isLoading = true
+            self.loadingText = "Loadding Notion..."
+        }
+        let docs = await model.syncAllNotion()
         if !docs.isEmpty {
             await model.AddDocument(docs: docs)
+        }
+        DispatchQueue.main.async {
+            self.isLoading = false
+        }
+    }
+    func syncDiffData() async {
+        DispatchQueue.main.async {
+            self.isLoading = true
+            self.loadingText = "Loadding Notion..."
+        }
+        let docs = await model.syncDiffNotion()
+        if !docs.isEmpty {
+            await model.AddDocument(docs: docs)
+        }
+        DispatchQueue.main.async {
+            self.isLoading = false
         }
     }
     func invokeByQuestion(question: String) async {
@@ -31,11 +53,11 @@ class ViewModel: ObservableObject {
         }
 
         let llm = OpenAI(model: Model.GPT4.gpt4_1106_preview)
-        
+//        await syncData()
         let qa = ConversationalRetrievalChain(retriver: model.r, llm: llm)
         
         let result = await qa.predict(args: ["question": question, "chat_history": ConversationalRetrievalChain.get_chat_history(chat_history: chat_history)])
-        chat_history.append((question, result!.0))
+//        chat_history.append((question, result!.0))
         
         print("⚠️**Question**: \(question)")
         print("✅**Answer**: \(result!)")

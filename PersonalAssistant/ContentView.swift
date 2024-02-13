@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 import MarkdownText
 import LangChain
+import UIx
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -25,6 +26,7 @@ struct ContentView: View {
             let rss = RSSLoader(url: "https://www.douban.com/feed/people/130141537/interests")
             let r = await rss.load()
             print("🌈rss:\(r)")
+            await viewModel.setup()
         }
     }
     var body: some View {
@@ -61,6 +63,7 @@ struct ContentView: View {
             InputFieldView(viewModel: viewModel)
                 .padding(.horizontal)
         }
+        .circleIndicatorWithSize(when: $viewModel.isLoading, lineWidth: 5, size: 44, pathColor: .accentColor, lineColor: .accentColor, text: viewModel.loadingText)
     }
 
     private func addItem() {
