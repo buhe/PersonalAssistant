@@ -25,6 +25,7 @@ struct ContentView: View {
             let rss = RSSLoader(url: "https://www.douban.com/feed/people/130141537/interests")
             let r = await rss.load()
             print("🌈rss:\(r)")
+            await viewModel.syncData()
         }
     }
     var body: some View {

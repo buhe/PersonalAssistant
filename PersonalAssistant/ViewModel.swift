@@ -24,6 +24,7 @@ class ViewModel: ObservableObject {
         if !docs.isEmpty {
             await model.AddDocument(docs: docs)
         }
+        print("🚗 Loaded")
     }
     func invokeByQuestion(question: String) async {
         DispatchQueue.main.async {
@@ -33,9 +34,9 @@ class ViewModel: ObservableObject {
         let llm = OpenAI(model: Model.GPT4.gpt4_1106_preview)
         
         let qa = ConversationalRetrievalChain(retriver: model.r, llm: llm)
-        await syncData()
+//        await syncData()
         let result = await qa.predict(args: ["question": question, "chat_history": ConversationalRetrievalChain.get_chat_history(chat_history: chat_history)])
-        chat_history.append((question, result!.0))
+//        chat_history.append((question, result!.0))
         
         print("⚠️**Question**: \(question)")
         print("✅**Answer**: \(result!)")
