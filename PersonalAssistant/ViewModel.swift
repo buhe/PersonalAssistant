@@ -25,7 +25,7 @@ class ViewModel: ObservableObject {
     func syncData() async {
         DispatchQueue.main.async {
              self.isLoading = true
-             self.loadingText = "Loadding Notion..."
+             self.loadingText = "Loading Notion..."
         }
         let docs = await model.syncNotion()
         if !docs.isEmpty {

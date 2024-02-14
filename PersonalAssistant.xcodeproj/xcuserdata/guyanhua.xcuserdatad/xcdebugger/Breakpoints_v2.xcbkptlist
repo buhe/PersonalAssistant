@@ -123,8 +123,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "writeToFile()"
             landmarkType = "7">
             <Locations>
@@ -186,8 +186,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "SimilaritySearchKit"
             landmarkType = "3">
             <Locations>
@@ -485,8 +485,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "SimilaritySearchKit"
             landmarkType = "3">
             <Locations>
@@ -611,8 +611,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "writeToFile()"
             landmarkType = "7">
             <Locations>
@@ -689,8 +689,8 @@
             filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "writeToFile()"
             landmarkType = "7">
             <Locations>
@@ -1168,6 +1168,179 @@
             endingLineNumber = "169"
             landmarkName = "search(_:top:metric:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CF05271-C3F7-46C9-98C1-A2F4BA215247"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/PersonalAssistant-aoqglbyvutdymohblpwhljbmcvws/SourcePackages/checkouts/similarity-search-kit/Sources/SimilaritySearchKit/Core/Persistence/Json/JsonStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "loadIndex(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8329FC9-AE11-4EB6-8B5B-7E57FCA3C693"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/PersonalAssistant-aoqglbyvutdymohblpwhljbmcvws/SourcePackages/checkouts/similarity-search-kit/Sources/SimilaritySearchKit/Core/Persistence/Json/JsonStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "loadIndex(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EDA5555-C55B-4F54-B23D-A3D275E4909F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "encode(sentence:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2EDA5555-C55B-4F54-B23D-A3D275E4909F - 90e5d28d821815b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for LangChain.LangChainEmbeddingBridge.encode(sentence: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;Swift.Float&gt;&gt;"
+                  moduleName = "PersonalAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guyanhua/code/github/langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "2EDA5555-C55B-4F54-B23D-A3D275E4909F - cf75b71615da3db8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for LangChain.LangChainEmbeddingBridge.encode(sentence: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;Swift.Float&gt;&gt;"
+                  moduleName = "PersonalAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guyanhua/code/github/langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "2EDA5555-C55B-4F54-B23D-A3D275E4909F - 4dd80488f862d1be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for LangChain.LangChainEmbeddingBridge.encode(sentence: Swift.String) async -&gt; Swift.Optional&lt;Swift.Array&lt;Swift.Float&gt;&gt;"
+                  moduleName = "PersonalAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guyanhua/code/github/langchain-swift/Sources/LangChain/vectorstores/SimilaritySearchKit.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5690294B-32D5-46CC-B101-F23A7BC041E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/PersonalAssistant-aoqglbyvutdymohblpwhljbmcvws/SourcePackages/checkouts/similarity-search-kit/Sources/SimilaritySearchKit/Core/Index/SimilarityIndex.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "addItems(_:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5690294B-32D5-46CC-B101-F23A7BC041E0 - a55c20f344fab0bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SimilaritySearchKit.SimilarityIndex.addItems(_: Swift.Array&lt;SimilaritySearchKit.SimilarityIndex.IndexItem&gt;, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "PersonalAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guyanhua/Library/Developer/Xcode/DerivedData/PersonalAssistant-aoqglbyvutdymohblpwhljbmcvws/SourcePackages/checkouts/similarity-search-kit/Sources/SimilaritySearchKit/Core/Index/SimilarityIndex.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "5690294B-32D5-46CC-B101-F23A7BC041E0 - 186e73f7c2e42a39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in SimilaritySearchKit.SimilarityIndex.addItems(_: Swift.Array&lt;SimilaritySearchKit.SimilarityIndex.IndexItem&gt;, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "PersonalAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guyanhua/Library/Developer/Xcode/DerivedData/PersonalAssistant-aoqglbyvutdymohblpwhljbmcvws/SourcePackages/checkouts/similarity-search-kit/Sources/SimilaritySearchKit/Core/Index/SimilarityIndex.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "5690294B-32D5-46CC-B101-F23A7BC041E0 - e0c42df96014ff12"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SimilaritySearchKit.SimilarityIndex.addItems(_: Swift.Array&lt;SimilaritySearchKit.SimilarityIndex.IndexItem&gt;, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "PersonalAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guyanhua/Library/Developer/Xcode/DerivedData/PersonalAssistant-aoqglbyvutdymohblpwhljbmcvws/SourcePackages/checkouts/similarity-search-kit/Sources/SimilaritySearchKit/Core/Index/SimilarityIndex.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "248"
+                  endingLineNumber = "248"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "5690294B-32D5-46CC-B101-F23A7BC041E0 - e0c42df96014ff33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in SimilaritySearchKit.SimilarityIndex.addItems(_: Swift.Array&lt;SimilaritySearchKit.SimilarityIndex.IndexItem&gt;, completion: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "PersonalAssistant"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/guyanhua/Library/Developer/Xcode/DerivedData/PersonalAssistant-aoqglbyvutdymohblpwhljbmcvws/SourcePackages/checkouts/similarity-search-kit/Sources/SimilaritySearchKit/Core/Index/SimilarityIndex.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
