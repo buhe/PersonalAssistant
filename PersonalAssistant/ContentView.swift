@@ -18,7 +18,7 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    
+    @State var showHelp = false
     @ObservedObject var viewModel: ViewModel
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -64,6 +64,20 @@ struct ContentView: View {
                 .padding(.horizontal)
         }
         .circleIndicatorWithSize(when: $viewModel.isLoading, lineWidth: 5, size: 44, pathColor: .accentColor, lineColor: .accentColor, text: viewModel.loadingText)
+        .toolbar {
+            ToolbarItem() {
+                Button{
+                    showHelp = true
+                } label: {
+                    Image(systemName: "questionmark.circle")
+                }
+            }
+        }
+        .sheet(isPresented: $showHelp){
+            Use {
+                showHelp = false
+            }
+        }
     }
 
     private func addItem() {

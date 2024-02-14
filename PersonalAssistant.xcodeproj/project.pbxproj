@@ -24,6 +24,8 @@
 		3FC764382B79C5F600FDE5B9 /* MarkdownText in Frameworks */ = {isa = PBXBuildFile; productRef = 3FC764372B79C5F600FDE5B9 /* MarkdownText */; };
 		3FC7643A2B79C71700FDE5B9 /* MarkdownStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC764392B79C71700FDE5B9 /* MarkdownStyles.swift */; };
 		3FC7643C2B79C7C800FDE5B9 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7643B2B79C7C800FDE5B9 /* InputFieldView.swift */; };
+		3FCDB37C2B7CA2BE006A2498 /* Use.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDB3792B7CA2BE006A2498 /* Use.swift */; };
+		3FDF6D152B7C75910014C4DB /* NotionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF6D142B7C75910014C4DB /* NotionNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		3FC764342B79C1A700FDE5B9 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		3FC764392B79C71700FDE5B9 /* MarkdownStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownStyles.swift; sourceTree = "<group>"; };
 		3FC7643B2B79C7C800FDE5B9 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
+		3FCDB3792B7CA2BE006A2498 /* Use.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Use.swift; sourceTree = "<group>"; };
+		3FDF6D142B7C75910014C4DB /* NotionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotionNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 		3F7EB3AD2B771CF9007969C2 /* PersonalAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				3FDF6D132B7C756E0014C4DB /* notion */,
 				3FC764342B79C1A700FDE5B9 /* ChatModel.swift */,
 				3FC764322B79C19300FDE5B9 /* ViewModel.swift */,
 				3F7EB3AE2B771CF9007969C2 /* PersonalAssistantApp.swift */,
@@ -154,6 +159,15 @@
 				3F7EB3D12B771CFB007969C2 /* PersonalAssistantUITestsLaunchTests.swift */,
 			);
 			path = PersonalAssistantUITests;
+			sourceTree = "<group>";
+		};
+		3FDF6D132B7C756E0014C4DB /* notion */ = {
+			isa = PBXGroup;
+			children = (
+				3FCDB3792B7CA2BE006A2498 /* Use.swift */,
+				3FDF6D142B7C75910014C4DB /* NotionNode.swift */,
+			);
+			path = notion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,12 +313,14 @@
 			files = (
 				3FC7643A2B79C71700FDE5B9 /* MarkdownStyles.swift in Sources */,
 				3FC764332B79C19300FDE5B9 /* ViewModel.swift in Sources */,
+				3FDF6D152B7C75910014C4DB /* NotionNode.swift in Sources */,
 				3F7EB3AF2B771CF9007969C2 /* PersonalAssistantApp.swift in Sources */,
 				3F7EB3B42B771CF9007969C2 /* PersonalAssistant.xcdatamodeld in Sources */,
 				3FC764352B79C1A700FDE5B9 /* ChatModel.swift in Sources */,
 				3F7EB3B62B771CF9007969C2 /* ContentView.swift in Sources */,
 				3FC7643C2B79C7C800FDE5B9 /* InputFieldView.swift in Sources */,
 				3F7EB3B12B771CF9007969C2 /* Persistence.swift in Sources */,
+				3FCDB37C2B7CA2BE006A2498 /* Use.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
