@@ -26,8 +26,9 @@ struct ChatModel {
     func syncNotion() async -> (toDelete:[Document], toAdd:[Document]) {
         let l = NotionLoader()
         var newDocs = await l.load()
-        newDocs = p.split_documents(documents: newDocs)
         print("📒 Loaded notion \(newDocs.count)")
+        newDocs = p.split_documents(documents: newDocs)
+        
         // load file
         let ids = await fileStore.keys()
 //        print("ids: \(ids)")
