@@ -60,4 +60,12 @@ class ViewModel: ObservableObject {
             
         }
     }
+    
+    func compareStringArrays(oldArray: [String], newArray: [String]) -> (toDelete: [String],
+  toAdd: [String]) {
+        let toDelete = oldArray.filter { !newArray.contains($0) }
+        let toAdd = newArray.filter { !oldArray.contains($0) }
+
+        return (toDelete, toAdd)
+    }
 }

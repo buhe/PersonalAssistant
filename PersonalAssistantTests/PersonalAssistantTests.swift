@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import PersonalAssistant
 
 final class PersonalAssistantTests: XCTestCase {
 
@@ -17,19 +18,33 @@ final class PersonalAssistantTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testCompareStringArrays() throws {
+        let vm = ViewModel()
+        let oldStrings = ["a", "b", "c", "d"]
+        let newStrings = ["b", "c", "e", "f"]
+
+        let changes = vm.compareStringArrays(oldArray: oldStrings, newArray: newStrings)
+        print("To Delete: \(changes.toDelete)")
+        print("To Add: \(changes.toAdd)")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    func testCompareStringArrays2() throws {
+        let vm = ViewModel()
+        let oldStrings = ["a", "b", "c", "d"]
+        let newStrings = ["b", "a"]
 
+        let changes = vm.compareStringArrays(oldArray: oldStrings, newArray: newStrings)
+        print("To Delete: \(changes.toDelete)")
+        print("To Add: \(changes.toAdd)")
+    }
+    
+    func testCompareStringArrays3() throws {
+        let vm = ViewModel()
+        let oldStrings = ["a", "b", "c", "d"]
+        let newStrings = ["bccc", "c", "e", "f"]
+
+        let changes = vm.compareStringArrays(oldArray: oldStrings, newArray: newStrings)
+        print("To Delete: \(changes.toDelete)")
+        print("To Add: \(changes.toAdd)")
+    }
 }
