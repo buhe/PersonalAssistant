@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import LangChain
 @testable import PersonalAssistant
 
 final class PersonalAssistantTests: XCTestCase {
@@ -19,9 +20,9 @@ final class PersonalAssistantTests: XCTestCase {
     }
 
     func testCompareStringArrays() throws {
-        let vm = ViewModel()
-        let oldStrings = ["a", "b", "c", "d"]
-        let newStrings = ["b", "c", "e", "f"]
+        let vm = ChatModel()
+        let oldStrings = [Document(page_content: "a", metadata: [:]),Document(page_content: "b", metadata: [:]),Document(page_content: "c", metadata: [:]),Document(page_content: "d", metadata: [:])]
+        let newStrings = [Document(page_content: "b", metadata: [:]),Document(page_content: "c", metadata: [:]),Document(page_content: "e", metadata: [:]),Document(page_content: "f", metadata: [:])]
 
         let changes = vm.compareStringArrays(oldArray: oldStrings, newArray: newStrings)
         print("To Delete: \(changes.toDelete)")
@@ -29,9 +30,9 @@ final class PersonalAssistantTests: XCTestCase {
     }
 
     func testCompareStringArrays2() throws {
-        let vm = ViewModel()
-        let oldStrings = ["a", "b", "c", "d"]
-        let newStrings = ["b", "a"]
+        let vm = ChatModel()
+        let oldStrings = [Document(page_content: "a", metadata: [:]),Document(page_content: "b", metadata: [:]),Document(page_content: "c", metadata: [:]),Document(page_content: "d", metadata: [:])]
+        let newStrings = [Document(page_content: "b", metadata: [:]),Document(page_content: "a", metadata: [:])]
 
         let changes = vm.compareStringArrays(oldArray: oldStrings, newArray: newStrings)
         print("To Delete: \(changes.toDelete)")
@@ -39,9 +40,9 @@ final class PersonalAssistantTests: XCTestCase {
     }
     
     func testCompareStringArrays3() throws {
-        let vm = ViewModel()
-        let oldStrings = ["a", "b", "c", "d"]
-        let newStrings = ["bccc", "c", "e", "f"]
+        let vm = ChatModel()
+        let oldStrings = [Document(page_content: "a", metadata: [:]),Document(page_content: "b", metadata: [:]),Document(page_content: "c", metadata: [:]),Document(page_content: "d", metadata: [:])]
+        let newStrings = [Document(page_content: "bccc", metadata: [:]),Document(page_content: "c", metadata: [:]),Document(page_content: "e", metadata: [:]),Document(page_content: "f", metadata: [:])]
 
         let changes = vm.compareStringArrays(oldArray: oldStrings, newArray: newStrings)
         print("To Delete: \(changes.toDelete)")

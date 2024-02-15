@@ -76,6 +76,9 @@ struct ContentView: View {
         .sheet(isPresented: $showHelp){
             Use {
                 showHelp = false
+                Task {
+                    await viewModel.syncData()
+                }
             }
         }
     }

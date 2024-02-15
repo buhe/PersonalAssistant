@@ -188,8 +188,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "SimilaritySearchKit"
-            landmarkType = "3">
+            landmarkName = "addText(text:metadata:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "C2147605-2792-4876-8A61-8E5AA846B310 - b7317b851e324298"
@@ -487,8 +487,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "SimilaritySearchKit"
-            landmarkType = "3">
+            landmarkName = "writeToFile()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "C9B80697-45D1-4C13-8543-20541A8AE7A7 - 4dd80488f862d1df"
@@ -613,8 +613,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
             endingLineNumber = "73"
-            landmarkName = "writeToFile()"
-            landmarkType = "7">
+            landmarkName = "SimilaritySearchKit"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "3E05A3F3-DF16-4312-ABDC-D062BA85EB28 - 90e5d28d8218141b"
@@ -974,8 +974,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
             endingLineNumber = "41"
-            landmarkName = "LangChainEmbeddingBridge"
-            landmarkType = "14">
+            landmarkName = "encode(sentence:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

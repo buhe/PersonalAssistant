@@ -28,14 +28,15 @@ class ViewModel: ObservableObject {
              self.loadingText = "Loading Notion..."
         }
         let docs = await model.syncNotion()
-        if !docs.isEmpty {
+        if !docs.toAdd.isEmpty || !docs.toDelete.isEmpty {
             await model.AddDocument(docs: docs)
         }
-        print("🚗 Loaded")
+        print("🚗 Loaded added \(docs.toAdd.count) and deleted \(docs.toDelete.count)")
         DispatchQueue.main.async {
             self.isLoading = false
         }
     }
+    
     func invokeByQuestion(question: String) async {
         DispatchQueue.main.async {
             self.model.messages.append((question,nil))
@@ -61,11 +62,5 @@ class ViewModel: ObservableObject {
         }
     }
     
-    func compareStringArrays(oldArray: [String], newArray: [String]) -> (toDelete: [String],
-  toAdd: [String]) {
-        let toDelete = oldArray.filter { !newArray.contains($0) }
-        let toAdd = newArray.filter { !oldArray.contains($0) }
 
-        return (toDelete, toAdd)
-    }
 }
