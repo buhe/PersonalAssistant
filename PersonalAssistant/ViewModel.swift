@@ -28,10 +28,13 @@ class ViewModel: ObservableObject {
              self.loadingText = "Loading Notion..."
         }
         let docs = await model.syncNotion()
-        if !docs.toAdd.isEmpty || !docs.toDelete.isEmpty {
-            await model.AddDocument(docs: docs)
+        if let docs = docs {
+            if !docs.toAdd.isEmpty || !docs.toDelete.isEmpty {
+                await model.AddDocument(docs: docs)
+            }
+            print("🚗 Loaded added \(docs.toAdd.count) and deleted \(docs.toDelete.count)")
         }
-        print("🚗 Loaded added \(docs.toAdd.count) and deleted \(docs.toDelete.count)")
+        
         DispatchQueue.main.async {
             self.isLoading = false
         }

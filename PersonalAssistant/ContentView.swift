@@ -18,7 +18,7 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    @State var showHelp = false
+
     @ObservedObject var viewModel: ViewModel
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -67,17 +67,11 @@ struct ContentView: View {
         .toolbar {
             ToolbarItem() {
                 Button{
-                    showHelp = true
+                    Task {
+                        await viewModel.syncData()
+                    }
                 } label: {
-                    Image(systemName: "questionmark.circle")
-                }
-            }
-        }
-        .sheet(isPresented: $showHelp){
-            Use {
-                showHelp = false
-                Task {
-                    await viewModel.syncData()
+                    Image(systemName: "arrow.clockwise")
                 }
             }
         }

@@ -23,10 +23,13 @@ struct ChatModel {
         vc = SimilaritySearchKit(embeddings: OpenAIEmbeddings(session: urlSession), autoLoad: true)
         r = ParentDocumentRetriever(child_splitter: RecursiveCharacterTextSplitter(chunk_size: 400, chunk_overlap: 200), parent_splitter: p, vectorstore: vc, docstore: store)
     }
-    func syncNotion() async -> (toDelete:[Document], toAdd:[Document]) {
+    func syncNotion() async -> (toDelete:[Document], toAdd:[Document])? {
         let l = NotionLoader()
         var newDocs = await l.load()
         print("📒 Loaded notion \(newDocs.count)")
+        if newDocs.isEmpty {
+            return nil
+        }
         newDocs = p.split_documents(documents: newDocs)
         
         // load file
