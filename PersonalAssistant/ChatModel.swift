@@ -11,6 +11,8 @@ import SwiftUI
 struct ChatModel {
     var updateMessage = "up to date"
     var updateMessageColor = Color.green
+    var updateMessageTime = 1
+    
     var messages: [(String, String?)] = []
     let fileStore = LocalFileStore(prefix: "notion")
     let vc: SimilaritySearchKit

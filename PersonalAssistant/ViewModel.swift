@@ -17,6 +17,7 @@ class ViewModel: ObservableObject {
     
     @Published var isLoading = false
     @Published var loadingText = ""
+    var stop = true
     
     var chat_history:[(String, String)] = []
     init() {
@@ -37,6 +38,16 @@ class ViewModel: ObservableObject {
         
         DispatchQueue.main.async {
             self.isLoading = false
+        }
+    }
+    
+    func syncDataWithoutProgess() async {
+        let docs = await model.syncNotion()
+        if let docs = docs {
+            if !docs.toAdd.isEmpty || !docs.toDelete.isEmpty {
+                await model.AddDocument(docs: docs)
+            }
+            print("🚗 Loaded added \(docs.toAdd.count) and deleted \(docs.toDelete.count)")
         }
     }
     
@@ -65,5 +76,40 @@ class ViewModel: ObservableObject {
         }
     }
     
+    func runPeriodically() async {
+        print("💁🏻‍♂️ This method is run every 5 minutes")
+        self.stop = true
+        DispatchQueue.main.async {
+            self.model.updateMessage = "updating..."
+            self.model.updateMessageColor = .red
+        }
+        
+        await syncDataWithoutProgess()
+        
+        model.updateMessageTime = 1
+        self.stop = false
 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 300) {
+            Task {
+                await self.runPeriodically()
+            }
+        }
+    }
+    
+    func time() async {
+//        print("💁🏻‍♂️ This method is run every 1s")
+        if self.stop {
+        } else {
+            DispatchQueue.main.async {
+                self.model.updateMessage = "updated \(self.model.updateMessageTime)s ago"
+                self.model.updateMessageColor = .green
+                self.model.updateMessageTime += 1
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            Task {
+                await self.time()
+            }
+        }
+    }
 }

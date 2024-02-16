@@ -27,6 +27,9 @@ struct ContentView: View {
             let r = await rss.load()
             print("🌈rss:\(r)")
 //            await viewModel.syncData()
+            await viewModel.time()
+            await viewModel.runPeriodically()
+
         }
     }
     var body: some View {
