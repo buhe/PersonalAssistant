@@ -19,7 +19,7 @@ class ViewModel: ObservableObject {
     @Published var loadingText = ""
     var stopTime = true
     var stopAutoRefresh = false
-    
+    @Published var updateEnable = true
     var chat_history:[(String, String)] = []
     init() {
         model = ChatModel()
@@ -30,6 +30,7 @@ class ViewModel: ObservableObject {
             self.loadingText = "Loading Notion..."
             self.model.updateMessage = "updating..."
             self.model.updateMessageColor = .red
+            self.updateEnable = false
         }
         stopTime = true
         stopAutoRefresh = true
@@ -45,6 +46,7 @@ class ViewModel: ObservableObject {
             self.isLoading = false
             self.model.updateMessageTime = 1
             self.stopTime = false
+            self.updateEnable = true
         }
     }
     

@@ -80,6 +80,7 @@ struct ContentView: View {
                 } label: {
                     Image(systemName: "arrow.clockwise")
                 }
+                .disabled(!viewModel.updateEnable)
             }
         }
     }
