@@ -17,7 +17,8 @@ class ViewModel: ObservableObject {
     
     @Published var isLoading = false
     @Published var loadingText = ""
-    var stop = true
+    var stopTime = true
+    var stopAutoRefresh = false
     
     var chat_history:[(String, String)] = []
     init() {
@@ -28,6 +29,7 @@ class ViewModel: ObservableObject {
              self.isLoading = true
              self.loadingText = "Loading Notion..."
         }
+        stopAutoRefresh = true
         let docs = await model.syncNotion()
         if let docs = docs {
             if !docs.toAdd.isEmpty || !docs.toDelete.isEmpty {
@@ -35,7 +37,7 @@ class ViewModel: ObservableObject {
             }
             print("🚗 Loaded added \(docs.toAdd.count) and deleted \(docs.toDelete.count)")
         }
-        
+        stopAutoRefresh = false
         DispatchQueue.main.async {
             self.isLoading = false
         }
@@ -78,27 +80,32 @@ class ViewModel: ObservableObject {
     
     func runPeriodically() async {
         print("💁🏻‍♂️ This method is run every 5 minutes")
-        self.stop = true
-        DispatchQueue.main.async {
-            self.model.updateMessage = "updating..."
-            self.model.updateMessageColor = .red
+        if stopAutoRefresh {
+        
+        } else {
+            self.stopTime = true
+            DispatchQueue.main.async {
+                self.model.updateMessage = "updating..."
+                self.model.updateMessageColor = .red
+            }
+            
+            await syncDataWithoutProgess()
+            DispatchQueue.main.async {
+                self.model.updateMessageTime = 1
+                self.stopTime = false
+            }
         }
-        
-        await syncDataWithoutProgess()
-        
-        model.updateMessageTime = 1
-        self.stop = false
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 300) {
             Task {
                 await self.runPeriodically()
             }
         }
+        
     }
     
     func time() async {
 //        print("💁🏻‍♂️ This method is run every 1s")
-        if self.stop {
+        if self.stopTime {
         } else {
             DispatchQueue.main.async {
                 self.model.updateMessage = "updated \(self.model.updateMessageTime)s ago"
