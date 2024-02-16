@@ -26,9 +26,12 @@ class ViewModel: ObservableObject {
     }
     func syncData() async {
         DispatchQueue.main.async {
-             self.isLoading = true
-             self.loadingText = "Loading Notion..."
+            self.isLoading = true
+            self.loadingText = "Loading Notion..."
+            self.model.updateMessage = "updating..."
+            self.model.updateMessageColor = .red
         }
+        stopTime = true
         stopAutoRefresh = true
         let docs = await model.syncNotion()
         if let docs = docs {
@@ -40,6 +43,8 @@ class ViewModel: ObservableObject {
         stopAutoRefresh = false
         DispatchQueue.main.async {
             self.isLoading = false
+            self.model.updateMessageTime = 1
+            self.stopTime = false
         }
     }
     
