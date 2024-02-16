@@ -66,6 +66,10 @@ struct ContentView: View {
         .circleIndicatorWithSize(when: $viewModel.isLoading, lineWidth: 5, size: 44, pathColor: .accentColor, lineColor: .accentColor, text: viewModel.loadingText)
         .toolbar {
             ToolbarItem() {
+                Text(viewModel.model.updateMessage)
+                    .foregroundStyle(viewModel.model.updateMessageColor)
+            }
+            ToolbarItem() {
                 Button{
                     Task {
                         await viewModel.syncData()
