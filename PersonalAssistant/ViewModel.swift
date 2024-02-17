@@ -28,35 +28,44 @@ class ViewModel: ObservableObject {
         DispatchQueue.main.async {
             self.isLoading = true
             self.loadingText = "Loading Notion..."
-            self.model.updateMessage = "updating..."
-            self.model.updateMessageColor = .red
-            self.updateEnable = false
         }
-        stopTime = true
         stopAutoRefresh = true
-        let docs = await model.syncNotion()
-        if let docs = docs {
-            if !docs.toAdd.isEmpty || !docs.toDelete.isEmpty {
-                await model.AddDocument(docs: docs)
-            }
-            print("🚗 Loaded added \(docs.toAdd.count) and deleted \(docs.toDelete.count)")
-        }
+        await syncDataWithoutProgess()
         stopAutoRefresh = false
         DispatchQueue.main.async {
             self.isLoading = false
-            self.model.updateMessageTime = 1
-            self.stopTime = false
-            self.updateEnable = true
         }
     }
     
     func syncDataWithoutProgess() async {
+        self.stopTime = true
+        DispatchQueue.main.async {
+            self.model.updateMessage = "updating..."
+            self.model.updateMessageColor = .red
+            self.updateEnable = false
+        }
+        
         let docs = await model.syncNotion()
         if let docs = docs {
             if !docs.toAdd.isEmpty || !docs.toDelete.isEmpty {
                 await model.AddDocument(docs: docs)
             }
+            DispatchQueue.main.async {
+                self.model.updateMessageTime = 1
+                self.model.updateMessage = "updated \(self.model.updateMessageTime)s ago"
+                self.model.updateMessageColor = .green
+                self.stopTime = false
+            }
             print("🚗 Loaded added \(docs.toAdd.count) and deleted \(docs.toDelete.count)")
+        } else {
+            DispatchQueue.main.async {
+                self.model.updateMessage = "update failed"
+                self.model.updateMessageColor = .red
+            }
+        }
+        
+        DispatchQueue.main.async {
+            self.updateEnable = true
         }
     }
     
@@ -90,17 +99,10 @@ class ViewModel: ObservableObject {
         if stopAutoRefresh {
         
         } else {
-            self.stopTime = true
-            DispatchQueue.main.async {
-                self.model.updateMessage = "updating..."
-                self.model.updateMessageColor = .red
-            }
+
             
             await syncDataWithoutProgess()
-            DispatchQueue.main.async {
-                self.model.updateMessageTime = 1
-                self.stopTime = false
-            }
+
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 300) {
             Task {
@@ -115,8 +117,7 @@ class ViewModel: ObservableObject {
         if self.stopTime {
         } else {
             DispatchQueue.main.async {
-                self.model.updateMessage = "updated \(self.model.updateMessageTime)s ago"
-                self.model.updateMessageColor = .green
+                
                 self.model.updateMessageTime += 1
             }
         }
