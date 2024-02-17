@@ -33,54 +33,56 @@ struct ContentView: View {
         }
     }
     var body: some View {
-        VStack {
-            List {
-                ForEach(viewModel.model.messages, id: \.0.self) { item in
-                    Section {
-                        VStack(alignment: .leading) {
-                            HStack(alignment: .top) {
-                                Image(systemName: "person")
-                                MarkdownText(item.0)
-                            }
-                            Divider()
-                            HStack(alignment: .top) {
-                                Image(systemName: "bubble.left")
-                                if let responce = item.1 {
-                                    MarkdownText(responce)
-                                } else {
-                                    ProgressView()
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(viewModel.model.messages, id: \.0.self) { item in
+                        Section {
+                            VStack(alignment: .leading) {
+                                HStack(alignment: .top) {
+                                    Image(systemName: "person")
+                                    MarkdownText(item.0)
+                                }
+                                Divider()
+                                HStack(alignment: .top) {
+                                    Image(systemName: "bubble.left")
+                                    if let responce = item.1 {
+                                        MarkdownText(responce)
+                                    } else {
+                                        ProgressView()
+                                    }
                                 }
                             }
                         }
                     }
                 }
+                .markdownHeadingStyle(.custom)
+                .markdownQuoteStyle(.custom)
+                .markdownCodeStyle(.custom)
+                .markdownInlineCodeStyle(.custom)
+                .markdownOrderedListBulletStyle(.custom)
+                .markdownUnorderedListBulletStyle(.custom)
+                .markdownImageStyle(.custom)
+                .listStyle(.plain)
+                InputFieldView(viewModel: viewModel)
+                    .padding(.horizontal)
             }
-            .markdownHeadingStyle(.custom)
-            .markdownQuoteStyle(.custom)
-            .markdownCodeStyle(.custom)
-            .markdownInlineCodeStyle(.custom)
-            .markdownOrderedListBulletStyle(.custom)
-            .markdownUnorderedListBulletStyle(.custom)
-            .markdownImageStyle(.custom)
-            .listStyle(.plain)
-            InputFieldView(viewModel: viewModel)
-                .padding(.horizontal)
-        }
-        .circleIndicatorWithSize(when: $viewModel.isLoading, lineWidth: 5, size: 44, pathColor: .accentColor, lineColor: .accentColor, text: viewModel.loadingText)
-        .toolbar {
-            ToolbarItem() {
-                Text(viewModel.model.updateMessage)
-                    .foregroundStyle(viewModel.model.updateMessageColor)
-            }
-            ToolbarItem() {
-                Button{
-                    Task {
-                        await viewModel.syncData()
-                    }
-                } label: {
-                    Image(systemName: "arrow.clockwise")
+            .circleIndicatorWithSize(when: $viewModel.isLoading, lineWidth: 5, size: 44, pathColor: .accentColor, lineColor: .accentColor, text: viewModel.loadingText)
+            .toolbar {
+                ToolbarItem() {
+                    Text(viewModel.model.updateMessage)
+                        .foregroundStyle(viewModel.model.updateMessageColor)
                 }
-                .disabled(!viewModel.updateEnable)
+                ToolbarItem() {
+                    Button{
+                        Task {
+                            await viewModel.syncData()
+                        }
+                    } label: {
+                        Image(systemName: "arrow.clockwise")
+                    }
+                    .disabled(!viewModel.updateEnable)
+                }
             }
         }
     }

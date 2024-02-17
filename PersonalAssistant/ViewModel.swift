@@ -39,7 +39,7 @@ class ViewModel: ObservableObject {
     
     func syncDataWithoutProgess() async {
         self.stopTime = true
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1)  {
             self.model.updateMessage = "updating..."
             self.model.updateMessageColor = .red
             self.updateEnable = false
@@ -119,6 +119,7 @@ class ViewModel: ObservableObject {
             DispatchQueue.main.async {
                 
                 self.model.updateMessageTime += 1
+                self.model.updateMessage = "updated \(self.model.updateMessageTime)s ago"
             }
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
